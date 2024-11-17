@@ -1,0 +1,322 @@
+[
+    {
+        "model": "chatbot.faq",
+        "pk": 1,
+        "fields": {
+            "question": "What is the eligibility criteria for B.Tech admission?",
+            "response": "Candidates must have completed 10+2 with Physics, Chemistry, and Mathematics. Admission is primarily through the EAPCET entrance exam."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 2,
+        "fields": {
+            "question": "How can I apply for admission to the B.Tech program?",
+            "response": "Applications can be submitted online through the college's admission portal during the admission period."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 3,
+        "fields": {
+            "question": "What is the admission process for international students?",
+            "response": "International students should contact the admissions office directly for specific guidelines and procedures."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 4,
+        "fields": {
+            "question": "Is there an entrance exam for admission?",
+            "response": "Yes, the EAPCET entrance exam is required for B.Tech admissions."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 5,
+        "fields": {
+            "question": "Can I get admission without an entrance exam?",
+            "response": "Admissions are primarily based on entrance exam scores. However, management quota seats may have different criteria."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 6,
+        "fields": {
+            "question": "What specializations are offered in the B.Tech program?",
+            "response": "Specializations include Computer Science & Engineering (CSE), Electronics & Communication Engineering (ECE), Electrical & Electronics Engineering (EEE), Mechanical Engineering (MECH), Computer Science & Systems Engineering (CS & SE), Computer Science & Information Technology (CSIT), and Artificial Intelligence and Machine Learning (AIML)."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 7,
+        "fields": {
+            "question": "Institute name",
+            "response": "Lendi Institute of Engineering & Technology."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 8,
+        "fields": {
+            "question": "Principal name",
+            "response": "The principal is Dr. V.V. Rama Reddy."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 9,
+        "fields": {
+            "question": "Faculty names",
+            "response": "The institute has a diverse faculty across various departments. Detailed profiles are available on the official website."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 10,
+        "fields": {
+            "question": "Hello",
+            "response": "Hello! How can I assist you today?"
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 11,
+        "fields": {
+            "question": "Hi",
+            "response": "Hello! How can I help you?"
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 12,
+        "fields": {
+            "question": "Hlo",
+            "response": "Hello! How can I assist you today?"
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 13,
+        "fields": {
+            "question": "Books",
+            "response": "The central library offers a vast collection of books, journals, and digital resources to support academic and research activities."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 14,
+        "fields": {
+            "question": "Library",
+            "response": "Yes, there is a central library with a vast collection of resources for students."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 15,
+        "fields": {
+            "question": "Principal",
+            "response": "The principal is Dr. V.V. Rama Reddy."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 16,
+        "fields": {
+            "question": "How do I reset my student portal password?",
+            "response": "To reset the student portal password, students should contact the Internship Cell. The default password is the assigned roll number."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 17,
+        "fields": {
+            "question": "Vice principal",
+            "response": "Information about the Vice Principal is not specified on the website."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 18,
+        "fields": {
+            "question": "Buses",
+            "response": "The institute provides transportation facilities for students and staff. Details about routes and schedules can be obtained from the transport department."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 19,
+        "fields": {
+            "question": "Wi-Fi",
+            "response": "The campus is equipped with Wi-Fi facilities to support academic and research activities."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 20,
+        "fields": {
+            "question": "Internet",
+            "response": "The campus is equipped with Wi-Fi facilities to support academic and research activities."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 21,
+        "fields": {
+            "question": "Canteen",
+            "response": "A spacious and clean canteen is available on campus, catering to the diverse tastes of students and staff."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 22,
+        "fields": {
+            "question": "Department names",
+            "response": "The institute comprises several departments, including CSE, ECE, EEE, MECH, CS & SE, CSIT, and AIML."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 23,
+        "fields": {
+            "question": "HOD",
+            "response": "Each department is led by a Head of Department. Specific names can be found on the respective department pages on the official website."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 24,
+        "fields": {
+            "question": "Syllabus for first year",
+            "response": "The syllabus for the first year can be found here: https://lendi.org/index.php?option=com_content&view=article&id=354&Itemid=1404"
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 25,
+        "fields": {
+            "question": "Syllabus for second year",
+            "response": "The syllabus for the second year can be found here: https://lendi.org/index.php?option=com_content&view=article&id=354&Itemid=1404"
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 26,
+        "fields": {
+            "question": "Syllabus for third year",
+            "response": "The syllabus for the third year can be found here: https://lendi.org/index.php?option=com_content&view=article&id=354&Itemid=1404"
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 27,
+        "fields": {
+            "question": "Syllabus for fourth year",
+            "response": "The syllabus for the fourth year can be found here: https://lendi.org/index.php?option=com_content&view=article&id=354&Itemid=1404"
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 28,
+        "fields": {
+            "question": "Medical",
+            "response": "Yes, there is a medical facility located above the college canteen."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 29,
+        "fields": {
+            "question": "Head of department for CSE",
+            "response": "The Head of the Department for Computer Science & Engineering (CSE) is Dr. A. Rama Rao. Profile: https://lendi.org/index.php?Itemid=1024&id=108&option=com_content&view=article"
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 30,
+        "fields": {
+            "question": "Head of department for ECE",
+            "response": "The Head of the Department for Electronics & Communication Engineering (ECE) is Dr. M. Rajan Babu. Profile: https://lendi.org/index.php?Itemid=1040&id=178&option=com_content&view=article"
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 31,
+        "fields": {
+            "question": "Head of department for EEE",
+            "response": "The Head of the Department for Electrical & Electronics Engineering (EEE) is not specified on the website. For more details, visit https://lendi.org"
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 32,
+        "fields": {
+            "question": "Head of department for MECH",
+            "response": "The Head of the Department for Mechanical Engineering (MECH) is not specified on the website. For more details, visit https://lendi.org"
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 33,
+        "fields": {
+            "question": "Head of department for CS & SE",
+            "response": "The Head of the Department for Computer Science & Systems Engineering (CS & SE) is not specified on the website. For more details, visit https://lendi.org"
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 34,
+        "fields": {
+            "question": "Head of department for CSIT",
+            "response": "The Head of the Department for Computer Science & Information Technology (CSIT) is Prof. G. Sateesh. Profile: https://lendi.org/index.php?Itemid=1469&id=394&option=com_content&view=article"
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 35,
+        "fields": {
+            "question": "Head of department for CSM",
+            "response": "The Head of the Department for Artificial Intelligence & Machine Learning (CSM) is not specified on the website. For more details, visit https://lendi.org"
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 36,
+        "fields": {
+            "question": "is parking available",
+            "response": "there was no seperate parling space, you have to park your vehicle outside the campus . College was not responsilbe for vehicles"
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 37,
+        "fields": {
+            "question": "pillodu",
+            "response": "kid"
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 38,
+        "fields": {
+            "question": "principle",
+            "response": "The principal is Dr. V.V. Rama Reddy."
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 39,
+        "fields": {
+            "question": "sateesh",
+            "response": "hod of csit"
+        }
+    },
+    {
+        "model": "chatbot.faq",
+        "pk": 40,
+        "fields": {
+            "question": "satish",
+            "response": "hod of csit"
+        }
+    }
+]

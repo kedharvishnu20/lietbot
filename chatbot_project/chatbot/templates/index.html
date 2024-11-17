@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Chatbot</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212; /* Dark background */
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Chatbot Container */
+        .chatbot-container {
+            background-color: #1e1e1e; /* Slightly lighter background */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 400px;
+        }
+
+        .chatbot-container h1 {
+            font-size: 1.8rem;
+        }
+
+        .chatbot-container p {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .chat-history {
+            background-color: #2a2a2a;
+            padding: 10px;
+            border-radius: 8px;
+            max-height: 250px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+        }
+
+        .chat-history .message {
+            margin-bottom: 10px;
+        }
+
+        .chat-history .message.user {
+            text-align: right;
+            color: #ffffff;
+        }
+
+        .chat-history .message.bot {
+            color: #ff5757;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        input {
+            flex-grow: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2a2a2a;
+            color: #ffffff;
+        }
+
+        input::placeholder {
+            color: #888888;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff5757;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff4040;
+        }
+
+        #help-section {
+            display: none;
+            margin-top: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="chatbot-container">
+        <h1>LIET-BOT</h1>
+        <p>Ask a question or help improve the chatbot by answering unanswered questions.</p>
+        <div class="chat-history" id="chat-history"></div>
+        <div class="input-container">
+            <input id="question" type="text" placeholder="Ask your question">
+            <button onclick="sendMessage()">Send</button>
+        </div><br>
+        <button id="help-button" onclick="toggleHelpSection()">Help Improve Chatbot</button>
+        <div id="help-section">
+            <h2>Help Improve Chatbot</h2>
+            <div id="unanswered-questions"></div>
+            <button onclick="submitAnswers()">Submit Answers</button>
+        </div>
+    </div>
+
+    <script>
+        async function sendMessage() {
+            const questionInput = document.getElementById('question');
+            const chatHistory = document.getElementById('chat-history');
+            const userQuestion = questionInput.value.trim();
+
+            if (!userQuestion) {
+                alert('Please enter a question!');
+                return;
+            }
+
+            chatHistory.innerHTML += `<div class="message user">${userQuestion}</div>`;
+            questionInput.value = '';
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+
+            try {
+                const response = await fetch('/chat/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ question: userQuestion }),
+                });
+
+                const data = await response.json();
+                chatHistory.innerHTML += `<div class="message bot">${data.response || "I don't have an answer for that yet."}</div>`;
+                chatHistory.scrollTop = chatHistory.scrollHeight;
+            } catch (error) {
+                console.error(error);
+                chatHistory.innerHTML += `<div class="message bot">Error: Unable to fetch response.</div>`;
+            }
+        }
+
+        async function toggleHelpSection() {
+            const helpSection = document.getElementById('help-section');
+            const helpButton = document.getElementById('help-button');
+
+            if (helpSection.style.display === 'none') {
+                try {
+                    const response = await fetch('/unanswered/');
+                    const questions = await response.json();
+
+                    const container = document.getElementById('unanswered-questions');
+                    container.innerHTML = questions.length
+                        ? questions.map((q, i) => `<p>${q.question}<textarea id="answer-${i}"></textarea></p>`).join('')
+                        : '<p>No unanswered questions at the moment.</p>';
+
+                    helpSection.style.display = 'block';
+                    helpButton.innerText = 'Close Help Section';
+                } catch {
+                    alert('Unable to load unanswered questions.');
+                }
+            } else {
+                helpSection.style.display = 'none';
+                helpButton.innerText = 'Help Improve Chatbot';
+            }
+        }
+
+        async function submitAnswers() {
+            const answers = [...document.querySelectorAll('textarea')]
+                .map((textarea, i) => ({
+                    question: document.querySelectorAll('#unanswered-questions p')[i].innerText.trim(),
+                    response: textarea.value.trim(),
+                }))
+                .filter(a => a.response);
+
+            try {
+                await fetch('/submit-answers/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ answers }),
+                });
+
+                alert('Answers submitted successfully!');
+                toggleHelpSection();
+            } catch {
+                alert('Failed to submit answers.');
+            }
+        }
+    </script>
+</body>
+</html>
